@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task/spring-task-4.1.xsd"> 
+        
+	<beans>
+		<task:scheduler id="sender" pool-size="1"/>
+		<task:scheduled-tasks scheduler="sender">
+		    <task:scheduled ref="smsProxyScheduler" method="sendNextChunk" 
+		    	fixed-delay="${sender.delay}"/>
+		</task:scheduled-tasks>
+	</beans>
+	
+</beans> 

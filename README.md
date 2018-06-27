@@ -1,2 +1,2 @@
 # smsproxy
-SpringBoot sample server-application that exposes a REST service able to send SMSs using MessageBird's API
+SpringBoot sample server-application that exposes a REST service able to send SMSs using [MessageBird's API](https://github.com/messagebird/java-rest-api). 

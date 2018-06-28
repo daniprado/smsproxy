@@ -1,12 +1,12 @@
 # [SpringBoot] SMSProxy
 > Sample server-application that exposes a REST service able to send SMSs using [MessageBird's API](https://github.com/messagebird/java-rest-api).
 
-Application starts a Tomcat server on localhost (port 8443) and a scheduled task that will execute every second and send to MessageBird's API the messages pending.
+Application starts a Tomcat server on localhost (`port 8443`) and a scheduled task that will execute every second and send to MessageBird's API the messages pending.
 * It exposes 2 services: 
-  * *request-sms* (POST) to send a SMS.
-  * *report* (GET) to check status of already sent SMSs.
+  * `request-sms` (POST) to send a SMS.
+  * `report` (GET) to check status of already sent SMSs.
 * It uses a H2 database running on memory, to store the created (and pending) SMSs. Meaning, you will lose all data if you reboot the application.
-* Server only accepts SSL communications (use ssl-server.crt as valid certificate).
+* Server only accepts SSL communications (use `ssl-server.crt` as valid certificate).
 
 
 ## Installation
